@@ -8,16 +8,15 @@ export default function Contact() {
     <section id="contact" className="px-6 pt-28 pb-10 md:pt-36">
       <div className="mx-auto max-w-3xl text-center">
         <ScrollReveal>
-          <p className="text-xs font-medium tracking-[0.2em] text-fg-muted uppercase">Contact</p>
-          <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
+          <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
             Let&apos;s get in touch
           </h2>
         </ScrollReveal>
 
         <ScrollReveal delay={0.05}>
           <p className="mx-auto mt-6 max-w-md leading-relaxed text-fg-muted">
-            Open to internships, collaborations, and conversations about interesting engineering
-            problems.
+            I&apos;m looking for internships. If you&apos;re hiring, or you want to talk about
+            tracking soccer players with one camera, email me.
           </p>
         </ScrollReveal>
 

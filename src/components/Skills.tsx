@@ -8,7 +8,7 @@ export default function Skills() {
   return (
     <section id="skills" className="px-6 py-28 md:py-36">
       <div className="mx-auto max-w-3xl">
-        <SectionHeading label="Skills" title="What I work with" />
+        <SectionHeading title="What I work with" />
 
         <div className="mt-12">
           {skillGroups.map((group, gi) => (

@@ -24,21 +24,25 @@ export interface SocialLink {
   href: string;
 }
 
+// ── Site ──────────────────────────────────────────────────────
+// Production URL. Update this once when a custom domain is added.
+export const siteUrl = "https://portfolio-eight-alpha-tsju89z3za.vercel.app";
+
 // ── Hero ──────────────────────────────────────────────────────
 export const hero = {
   name: "Amr Abujabal",
   tagline: "Computer Science  |  Cloud & Backend  |  Computer Vision",
   intro:
-    "I build end-to-end systems — from computer-vision pipelines that turn raw footage into analytics, to full-stack apps that ship to production.",
+    "I build computer-vision pipelines that turn match footage into player analytics, and I ship full-stack apps to production.",
   resumePath: "/AmrAbujabal_CV.pdf",
 } as const;
 
 // ── About ─────────────────────────────────────────────────────
 export const about = {
   paragraphs: [
-    "I'm a 4th-year Computer Science student at the University of British Columbia (Okanagan), graduating May 2027. My focus is on backend and cloud engineering, but I enjoy working across the entire stack.",
-    "I've built computer-vision pipelines that track soccer players from a single camera, full-stack match predictors used during a live World Cup, and food-delivery backends with layered architectures and CI/CD pipelines.",
-    "I'm drawn to projects where engineering decisions have real impact — whether that's making sports analytics accessible to amateur clubs or putting ML models into production.",
+    "I'm a fourth-year Computer Science student at UBC Okanagan, graduating in May 2027. Backend and cloud work is home base, but I'll go wherever the project needs me in the stack.",
+    "Most of my projects mix ML with sports. I built a system that tracks every soccer player on the pitch from a single camera, and a World Cup predictor, trained on 49,000 historical matches, that ran live through the 2026 tournament.",
+    "PitchVision exists because pro-level player tracking costs more than most amateur clubs can spend. One camera and the right models close most of that gap. That is the kind of problem I want to keep working on.",
   ],
 } as const;
 

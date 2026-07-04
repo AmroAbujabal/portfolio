@@ -14,7 +14,7 @@ export default function About() {
   return (
     <section id="about" className="px-6 py-28 md:py-36">
       <div className="mx-auto max-w-3xl">
-        <SectionHeading label="About" title="A little background" />
+        <SectionHeading title="A little background" />
 
         <div className="mt-10 space-y-5">
           {about.paragraphs.map((p, i) => (

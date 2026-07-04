@@ -55,7 +55,7 @@ export default function Navbar() {
           <ThemeToggle />
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="flex h-10 w-10 cursor-pointer flex-col items-center justify-center gap-[5px] rounded transition-colors duration-200 hover:bg-border/50"
+            className="flex h-11 w-11 cursor-pointer flex-col items-center justify-center gap-[5px] rounded transition-colors duration-200 hover:bg-border/50"
             aria-label="Toggle menu"
             aria-expanded={mobileOpen}
           >

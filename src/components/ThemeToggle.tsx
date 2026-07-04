@@ -16,7 +16,7 @@ export default function ThemeToggle() {
   );
 
   if (!mounted) {
-    return <div className="h-10 w-10" aria-hidden />;
+    return <div className="h-11 w-11" aria-hidden />;
   }
 
   const isDark = theme === "dark";
@@ -24,7 +24,7 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={() => setTheme(isDark ? "light" : "dark")}
-      className="flex h-10 w-10 cursor-pointer items-center justify-center rounded text-fg-muted transition-colors duration-200 hover:bg-border/50 hover:text-fg"
+      className="flex h-11 w-11 cursor-pointer items-center justify-center rounded text-fg-muted transition-colors duration-200 hover:bg-border/50 hover:text-fg"
       aria-label={`Switch to ${isDark ? "light" : "dark"} mode`}
     >
       {isDark ? (
