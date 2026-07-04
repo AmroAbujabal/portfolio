@@ -26,8 +26,8 @@ export interface SocialLink {
 }
 
 // ── Site ──────────────────────────────────────────────────────
-// Production URL. Update this once when a custom domain is added.
-export const siteUrl = "https://portfolio-eight-alpha-tsju89z3za.vercel.app";
+// Production URL — drives metadataBase, sitemap, robots, and JSON-LD.
+export const siteUrl = "https://amrabujabal.com";
 
 // ── Hero ──────────────────────────────────────────────────────
 export const hero = {
