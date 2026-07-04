@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Amr Abujabal — Portfolio
 
-## Getting Started
+Personal portfolio site. Next.js 16 + TypeScript + Tailwind CSS v4 + Framer Motion.
 
-First, run the development server:
+## Local Development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# → http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Deploy to Vercel
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Option A: GitHub (recommended — auto-deploys on push)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Push this repo to GitHub
+2. Go to [vercel.com/new](https://vercel.com/new)
+3. Import the repo → Vercel auto-detects Next.js → click **Deploy**
+4. Every push to `main` auto-deploys
 
-## Learn More
+### Option B: CLI
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm i -g vercel
+vercel          # preview deploy
+vercel --prod   # production deploy
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## How to Add a Project
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Open `src/data/content.ts` and add an object to the `projects` array:
 
-## Deploy on Vercel
+```ts
+{
+  title: "My New Project",
+  subtitle: "Category / Context",
+  description: "What it does, in 2-3 sentences.",
+  stack: ["Tech1", "Tech2", "Tech3"],
+  repoUrl: "https://github.com/...",
+  demoUrl: "https://...",       // optional
+  status: "In Progress",       // optional badge
+}
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+That's it — no component changes needed.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## How to Update Skills / Bio / Links
+
+Everything is in `src/data/content.ts`:
+
+- `hero` — name, tagline, intro, resume path
+- `about` — bio paragraphs
+- `skillGroups` — skill categories and items
+- `socialLinks` — GitHub, LinkedIn, email
+
+## Resume PDF
+
+Drop your resume at `public/AmrAbujabal_CV.pdf`. The download button links to it.
+
+## Stack
+
+- **Next.js 16** (App Router, statically prerendered)
+- **TypeScript**
+- **Tailwind CSS v4**
+- **Framer Motion** — scroll reveals, hover effects, staggered animations
+- **next-themes** — dark/light mode toggle
+- **Fonts** — Montserrat via `next/font`
