@@ -2,7 +2,7 @@
 
 ## Theme
 
-Swiss minimalism, light-first. Near-white ground (#FAFAFA), true-white surfaces, near-black ink. Dark mode is an inversion of the same scale, toggled via `.dark` class (next-themes), never system-driven.
+Swiss minimalism, dark by default. Near-black ground (#0A0A0A), dark surfaces, near-white ink. Light mode is an inversion of the same scale (near-white #FAFAFA ground), toggled via `.dark` class (next-themes), never system-driven.
 
 ## Color
 

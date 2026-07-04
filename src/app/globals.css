@@ -3,7 +3,8 @@
 /* ── Dark variant driven by next-themes class="dark" ─────── */
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* ── Semantic tokens: light is default, .dark overrides ──── */
+/* ── Semantic tokens: :root holds the light scale, .dark overrides it
+   (dark is the active default via ThemeProvider) ──── */
 :root {
   --bg: #fafafa;
   --surface: #ffffff;

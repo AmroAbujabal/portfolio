@@ -29,8 +29,9 @@ test("nav anchor targets exist on the page", async ({ page }) => {
   }
 });
 
-test("theme toggle switches to dark mode", async ({ page }) => {
+test("theme toggle switches to light mode", async ({ page }) => {
   await page.goto("/");
-  await page.getByRole("button", { name: "Switch to dark mode" }).click();
   await expect(page.locator("html")).toHaveClass(/dark/);
+  await page.getByRole("button", { name: "Switch to light mode" }).click();
+  await expect(page.locator("html")).not.toHaveClass(/dark/);
 });
