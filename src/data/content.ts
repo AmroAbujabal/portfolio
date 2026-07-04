@@ -12,6 +12,7 @@ export interface Project {
   repoUrl: string;
   demoUrl?: string;
   status?: string;
+  image?: { src: string; alt: string };
 }
 
 export interface SkillGroup {
@@ -66,6 +67,10 @@ export const projects: Project[] = [
     ],
     repoUrl: "https://github.com/AmroAbujabal/Pitch-Vision",
     status: "In Progress",
+    image: {
+      src: "/projects/pitch-vision.png",
+      alt: "Tactical diagram of a soccer pitch with player bounding boxes, trajectory lines, and a heatmap contour",
+    },
   },
   {
     title: "World Cup 2026 Predictor",
@@ -84,6 +89,10 @@ export const projects: Project[] = [
     ],
     repoUrl: "https://github.com/AmroAbujabal/world-cup-2026-predictor",
     demoUrl: "https://frontend-nine-alpha-56.vercel.app",
+    image: {
+      src: "/projects/world-cup-predictor.png",
+      alt: "Screenshot of the live AI Bracket Challenge: model stats and the knockout bracket picker",
+    },
   },
   {
     title: "ByteBites",

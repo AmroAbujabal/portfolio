@@ -20,11 +20,14 @@ export default function Skills() {
                 <p className="text-[15px] leading-loose">
                   {group.items.map((skill, si) => (
                     <span key={skill}>
-                      {skill}
+                      <span className="whitespace-nowrap">{skill}</span>
                       {si < group.items.length - 1 && (
-                        <span className="mx-2.5 text-border" aria-hidden>
-                          ·
-                        </span>
+                        <>
+                          {" "}
+                          <span className="mx-1.5 text-border" aria-hidden>
+                            ·
+                          </span>{" "}
+                        </>
                       )}
                     </span>
                   ))}
