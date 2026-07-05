@@ -17,11 +17,15 @@ export default function Projects() {
             <ScrollReveal key={project.title} delay={0.05 * (i + 1)}>
               <article
                 className={`group rounded-lg border border-border bg-surface p-8 transition-shadow duration-250 hover:shadow-[0_2px_16px_rgba(0,0,0,0.06)] md:p-10 dark:hover:border-fg-muted/40 dark:hover:shadow-none ${
-                  project.image ? "grid gap-8 md:grid-cols-[1fr_340px] md:items-center" : ""
+                  project.image
+                    ? "grid gap-8 md:grid-cols-[1fr_340px] md:items-center"
+                    : ""
                 }`}
               >
                 <div className="max-w-2xl">
-                  <h3 className="text-xl font-semibold tracking-tight">{project.title}</h3>
+                  <h3 className="text-xl font-semibold tracking-tight">
+                    {project.title}
+                  </h3>
                   <p className="mt-2 text-xs font-medium tracking-[0.14em] text-fg-muted uppercase">
                     {project.subtitle}
                   </p>
@@ -31,7 +35,9 @@ export default function Projects() {
                     </p>
                   )}
 
-                  <p className="mt-5 leading-relaxed text-fg-muted">{project.description}</p>
+                  <p className="mt-5 leading-relaxed text-fg-muted">
+                    {project.description}
+                  </p>
 
                   <p className="mt-5 text-sm text-fg-muted">
                     {project.stack.map((tech, ti) => (
@@ -49,26 +55,30 @@ export default function Projects() {
                     ))}
                   </p>
 
-                  <div className="mt-6 flex gap-6">
-                    <a
-                      href={project.repoUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex cursor-pointer items-center gap-1 text-sm font-medium underline-offset-4 transition-colors duration-200 hover:underline"
-                    >
-                      View Code <ArrowUpRight className="h-3.5 w-3.5" />
-                    </a>
-                    {project.demoUrl && (
-                      <a
-                        href={project.demoUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex cursor-pointer items-center gap-1 text-sm font-medium underline-offset-4 transition-colors duration-200 hover:underline"
-                      >
-                        Live Demo <ArrowUpRight className="h-3.5 w-3.5" />
-                      </a>
-                    )}
-                  </div>
+                  {(project.repoUrl || project.demoUrl) && (
+                    <div className="mt-6 flex gap-6">
+                      {project.repoUrl && (
+                        <a
+                          href={project.repoUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex cursor-pointer items-center gap-1 text-sm font-medium underline-offset-4 transition-colors duration-200 hover:underline"
+                        >
+                          View Code <ArrowUpRight className="h-3.5 w-3.5" />
+                        </a>
+                      )}
+                      {project.demoUrl && (
+                        <a
+                          href={project.demoUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex cursor-pointer items-center gap-1 text-sm font-medium underline-offset-4 transition-colors duration-200 hover:underline"
+                        >
+                          Live Demo <ArrowUpRight className="h-3.5 w-3.5" />
+                        </a>
+                      )}
+                    </div>
+                  )}
                 </div>
 
                 {project.image && (

@@ -10,7 +10,7 @@ Recruiters and engineers who arrive from Amr's resume or LinkedIn. They skim: th
 
 ## Product Purpose
 
-Personal portfolio for Amr Abujabal, a fourth-year CS student at UBC Okanagan graduating May 2027. The site exists to convert resume views into interview calls by making three projects (PitchVision, World Cup 2026 Predictor, ByteBites) legible and credible fast. Success = recruiter downloads the resume or clicks a repo/demo link.
+Personal portfolio for Amr Abujabal, a fourth-year CS student at UBC Okanagan graduating May 2027. The site exists to convert resume views into interview calls by making three projects (PitchVision, World Cup 2026 Predictor, Reproducing ResNet) legible and credible fast. Success = recruiter downloads the resume or clicks a repo/demo link.
 
 ## Brand Personality
 

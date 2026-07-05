@@ -14,12 +14,13 @@ test("resume PDF link is present and the file is served", async ({ page, request
   expect(res.status()).toBe(200);
 });
 
-test("every project renders with a repo link", async ({ page }) => {
+test("every project renders, with a repo link when it has one", async ({ page }) => {
   await page.goto("/");
   for (const project of projects) {
     await expect(page.getByRole("heading", { name: project.title })).toBeAttached();
   }
-  await expect(page.getByRole("link", { name: /View Code/ })).toHaveCount(projects.length);
+  const withRepo = projects.filter((p) => p.repoUrl).length;
+  await expect(page.getByRole("link", { name: /View Code/ })).toHaveCount(withRepo);
 });
 
 test("nav anchor targets exist on the page", async ({ page }) => {

@@ -9,7 +9,7 @@ export interface Project {
   subtitle: string;
   description: string;
   stack: string[];
-  repoUrl: string;
+  repoUrl?: string;
   demoUrl?: string;
   status?: string;
   image?: { src: string; alt: string };
@@ -95,19 +95,19 @@ export const projects: Project[] = [
     },
   },
   {
-    title: "ByteBites",
-    subtitle: "COSC 310 Software Engineering",
+    title: "Reproducing ResNet",
+    subtitle: "Deep Learning / Paper Reproduction",
     description:
-      "RESTful food-delivery backend using a 3-layer architecture (API -> Service -> Repository) spanning 8 features: auth, menu management, ordering, delivery tracking, pricing, payment, and notifications. JWT authentication with role-based access control (User / Manager / Admin).",
+      "From-scratch reproduction of the CIFAR-10 experiments in Deep Residual Learning for Image Recognition (He et al., 2015): model, data pipeline, and training loop rebuilt from the paper alone under strict test-driven development. Goal: match the paper's error within ±0.5% over 3 seeds, then a controlled 2×2 ablation of original vs. pre-activation ResNet-56 on CIFAR-10 and CIFAR-100.",
     stack: [
-      "FastAPI",
-      "Python",
-      "PostgreSQL",
-      "Docker",
-      "GitHub Actions",
-      "Pytest",
+      "PyTorch",
+      "Deep Learning",
+      "Paper Reproduction",
+      "Computer Vision",
+      "Reproducibility",
+      "TDD",
     ],
-    repoUrl: "https://github.com/Vinu3000/COSC310-Team9-ByteBites",
+    status: "In Progress",
   },
 ];
 
