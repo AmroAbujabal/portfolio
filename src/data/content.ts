@@ -107,6 +107,7 @@ export const projects: Project[] = [
       "Reproducibility",
       "TDD",
     ],
+    repoUrl: "https://github.com/AmroAbujabal/resnet-cifar-repro",
     status: "In Progress",
   },
   {
