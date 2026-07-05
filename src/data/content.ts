@@ -109,6 +109,21 @@ export const projects: Project[] = [
     ],
     status: "In Progress",
   },
+  {
+    title: "ByteBites",
+    subtitle: "COSC 310 Software Engineering",
+    description:
+      "RESTful food-delivery backend using a 3-layer architecture (API -> Service -> Repository) spanning 8 features: auth, menu management, ordering, delivery tracking, pricing, payment, and notifications. JWT authentication with role-based access control (User / Manager / Admin).",
+    stack: [
+      "FastAPI",
+      "Python",
+      "PostgreSQL",
+      "Docker",
+      "GitHub Actions",
+      "Pytest",
+    ],
+    repoUrl: "https://github.com/Vinu3000/COSC310-Team9-ByteBites",
+  },
 ];
 
 // ── Skills ────────────────────────────────────────────────────
