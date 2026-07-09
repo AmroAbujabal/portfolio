@@ -76,7 +76,7 @@ export const projects: Project[] = [
     title: "World Cup 2026 Predictor",
     subtitle: "Full-Stack ML App",
     description:
-      "Live match outcome predictor for the 2026 FIFA World Cup. XGBoost classifier trained on 49,000+ historical matches with ELO-based features predicts every knockout match. Includes a live bracket, user predictions, leaderboard, and auto-polling from football-data.org during the tournament.",
+      "Live match outcome predictor for the 2026 FIFA World Cup. An XGBoost classifier trained on 49,000+ historical matches with ELO-based features predicts every knockout tie. Features an interactive bracket, user predictions, and a live leaderboard — with a self-updating sync that pulls real results from football-data.org and advances the bracket automatically as each match finishes.",
     stack: [
       "XGBoost",
       "scikit-learn",
@@ -91,7 +91,7 @@ export const projects: Project[] = [
     demoUrl: "https://frontend-nine-alpha-56.vercel.app",
     image: {
       src: "/projects/world-cup-predictor.png",
-      alt: "Screenshot of the live AI Bracket Challenge: model stats and the knockout bracket picker",
+      alt: "Live World Cup 2026 knockout bracket with a black-and-gold 'Road to the Final' hero and the AI model's Round-of-16 win probabilities",
     },
   },
   {
