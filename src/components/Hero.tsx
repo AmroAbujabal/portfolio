@@ -17,7 +17,7 @@ export default function Hero() {
   const prefersReduced = useReducedMotion();
 
   return (
-    <section className="flex min-h-[100dvh] flex-col items-center justify-center px-6 text-center">
+    <section className="relative flex min-h-[100dvh] flex-col items-center justify-center px-6 text-center">
       <motion.div
         variants={prefersReduced ? undefined : stagger}
         initial={prefersReduced ? false : "hidden"}
@@ -64,6 +64,33 @@ export default function Hero() {
           </a>
         </motion.div>
       </motion.div>
+
+      <motion.a
+        href="#about"
+        aria-label="Scroll to about section"
+        className="absolute bottom-8 left-1/2 text-fg-muted transition-colors duration-200 hover:text-fg"
+        style={{ x: "-50%" }}
+        initial={prefersReduced ? false : { opacity: 0 }}
+        animate={prefersReduced ? undefined : { opacity: 1, y: [0, 6, 0] }}
+        transition={{
+          opacity: { duration: 0.6, delay: 1 },
+          y: { duration: 1.6, repeat: Infinity, ease: "easeInOut" },
+        }}
+      >
+        <svg
+          width="22"
+          height="22"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          aria-hidden
+        >
+          <path d="M6 9l6 6 6-6" />
+        </svg>
+      </motion.a>
     </section>
   );
 }
