@@ -16,7 +16,7 @@ export default function Projects() {
           {projects.map((project, i) => (
             <ScrollReveal key={project.title} delay={0.05 * (i + 1)}>
               <article
-                className={`group rounded-lg border border-border bg-surface p-8 transition-shadow duration-250 hover:shadow-[0_2px_16px_rgba(0,0,0,0.06)] md:p-10 dark:hover:border-fg-muted/40 dark:hover:shadow-none ${
+                className={`group rounded-lg border border-border bg-surface p-8 transition-[box-shadow,transform] duration-250 hover:-translate-y-1 hover:shadow-[0_2px_16px_rgba(0,0,0,0.06)] motion-reduce:hover:translate-y-0 md:p-10 dark:hover:border-fg-muted/40 dark:hover:shadow-none ${
                   project.image
                     ? "grid gap-8 md:grid-cols-[1fr_340px] md:items-center"
                     : ""

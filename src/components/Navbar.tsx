@@ -1,11 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { navLinks } from "@/data/content";
 import ThemeToggle from "./ThemeToggle";
 
 export default function Navbar() {
+  const prefersReduced = useReducedMotion();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -24,7 +25,10 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header
+    <motion.header
+      initial={prefersReduced ? false : { opacity: 0, y: -12 }}
+      animate={prefersReduced ? undefined : { opacity: 1, y: 0 }}
+      transition={{ duration: 0.4, ease: "easeOut" }}
       className={`fixed top-0 right-0 left-0 z-40 transition-all duration-200 ${
         scrolled || mobileOpen
           ? "border-b border-border bg-bg/85 backdrop-blur-md"
@@ -42,9 +46,10 @@ export default function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className="cursor-pointer rounded px-4 py-2 text-sm font-medium text-fg-muted transition-colors duration-200 hover:bg-border/50 hover:text-fg"
+              className="group relative cursor-pointer px-4 py-2 text-sm font-medium text-fg-muted transition-colors duration-200 hover:text-fg"
             >
               {link.label}
+              <span className="absolute inset-x-4 bottom-1 h-px origin-left scale-x-0 bg-fg transition-transform duration-200 group-hover:scale-x-100 motion-reduce:transition-none" />
             </a>
           ))}
           <ThemeToggle />
@@ -98,6 +103,6 @@ export default function Navbar() {
           </motion.div>
         )}
       </AnimatePresence>
-    </header>
+    </motion.header>
   );
 }
