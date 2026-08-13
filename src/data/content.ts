@@ -110,8 +110,7 @@ export const projects: Project[] = [
       "TDD",
     ],
     repoUrl: "https://github.com/AmroAbujabal/resnet-cifar-repro",
-    demoUrl:
-      "https://claude.ai/code/artifact/138ec52c-3d27-4014-9164-5bdddfa958d8",
+    demoUrl: "https://resnet-cifar-repro.vercel.app",
     demoLabel: "Read the Write-up",
   },
   {
