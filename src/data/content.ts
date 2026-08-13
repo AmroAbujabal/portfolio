@@ -42,7 +42,7 @@ export const hero = {
 export const about = {
   paragraphs: [
     "I'm a fourth-year Computer Science student at UBC Okanagan, graduating in May 2027. Backend and cloud work is home base, but I'll go wherever the project needs me in the stack.",
-    "Most of my projects mix ML with sports. I built a system that tracks every soccer player on the pitch from a single camera, and a World Cup predictor, trained on 49,000 historical matches, that ran live through the 2026 tournament.",
+    "Most of my projects mix ML with sports. I built a system that tracks every soccer player on the pitch from a single camera, and a World Cup predictor, trained on 49,000 historical matches, that ran live through the 2026 tournament and finished calling 26 of 31 knockout ties correctly.",
     "PitchVision exists because pro-level player tracking costs more than most amateur clubs can spend. One camera and the right models close most of that gap. That is the kind of problem I want to keep working on.",
   ],
 } as const;
@@ -76,7 +76,7 @@ export const projects: Project[] = [
     title: "World Cup 2026 Predictor",
     subtitle: "Full-Stack ML App",
     description:
-      "Live match outcome predictor for the 2026 FIFA World Cup. An XGBoost classifier trained on 49,000+ historical matches with ELO-based features predicts every knockout tie. Features an interactive bracket, user predictions, and a live leaderboard — with a self-updating sync that pulls real results from football-data.org and advances the bracket automatically as each match finishes.",
+      "Match outcome predictor that ran live through the 2026 FIFA World Cup. An XGBoost classifier trained on 49,000+ historical matches with ELO-based features priced every knockout tie before kickoff, behind an interactive bracket, user predictions and a leaderboard — with a self-updating sync that pulled real results from football-data.org and advanced the bracket as each match finished. Final scorecard: 26 of 31 correct (83.9%), Brier 0.3665, perfect through the quarter-finals and semis; it missed the final, giving Argentina 43% against the eventual champions Spain.",
     stack: [
       "XGBoost",
       "scikit-learn",
@@ -85,13 +85,14 @@ export const projects: Project[] = [
       "SQLAlchemy",
       "Tailwind",
       "Vercel",
-      "Railway",
+      "Render",
+      "Neon",
     ],
     repoUrl: "https://github.com/AmroAbujabal/world-cup-2026-predictor",
     demoUrl: "https://frontend-nine-alpha-56.vercel.app",
     image: {
       src: "/projects/world-cup-predictor.png",
-      alt: "Live World Cup 2026 knockout bracket with a black-and-gold 'Road to the Final' hero and the AI model's Round-of-16 win probabilities",
+      alt: "Finished World Cup 2026 bracket with a black-and-gold 'Spain are champions' hero and the AI report card scoring the model at 84%, 26 of 31 calls",
     },
   },
   {
