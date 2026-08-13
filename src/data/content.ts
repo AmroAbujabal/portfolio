@@ -11,6 +11,7 @@ export interface Project {
   stack: string[];
   repoUrl?: string;
   demoUrl?: string;
+  demoLabel?: string;
   status?: string;
   image?: { src: string; alt: string };
 }
@@ -99,7 +100,7 @@ export const projects: Project[] = [
     title: "Reproducing ResNet",
     subtitle: "Deep Learning / Paper Reproduction",
     description:
-      "From-scratch reproduction of the CIFAR-10 experiments in Deep Residual Learning for Image Recognition (He et al., 2015): model, data pipeline, and training loop rebuilt from the paper alone under strict test-driven development. Goal: match the paper's error within ±0.5% over 3 seeds, then a controlled 2×2 ablation of original vs. pre-activation ResNet-56 on CIFAR-10 and CIFAR-100.",
+      "From-scratch reproduction of the CIFAR-10 experiments in Deep Residual Learning for Image Recognition (He et al., 2015): model, data pipeline, and training loop rebuilt from the paper alone under strict test-driven development. ResNet-20 reproduced at 8.39 ± 0.31% and ResNet-56 at 7.45 ± 0.69% over 3 seeds, both inside the ±0.5% target fixed before any model was trained. A follow-up 2×2 pitting the original block against pre-activation ResNet-56 across CIFAR-10 and CIFAR-100 found no measurable difference at depth 56 — the two gaps are smaller than the noise and point in opposite directions, a null result reported as the finding. 15 runs, ~26 GPU-hours.",
     stack: [
       "PyTorch",
       "Deep Learning",
@@ -109,7 +110,9 @@ export const projects: Project[] = [
       "TDD",
     ],
     repoUrl: "https://github.com/AmroAbujabal/resnet-cifar-repro",
-    status: "In Progress",
+    demoUrl:
+      "https://claude.ai/code/artifact/138ec52c-3d27-4014-9164-5bdddfa958d8",
+    demoLabel: "Read the Write-up",
   },
   {
     title: "ByteBites",

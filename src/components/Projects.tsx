@@ -74,7 +74,8 @@ export default function Projects() {
                           rel="noopener noreferrer"
                           className="flex cursor-pointer items-center gap-1 text-sm font-medium underline-offset-4 transition-colors duration-200 hover:underline"
                         >
-                          Live Demo <ArrowUpRight className="h-3.5 w-3.5" />
+                          {project.demoLabel ?? "Live Demo"}{" "}
+                          <ArrowUpRight className="h-3.5 w-3.5" />
                         </a>
                       )}
                     </div>
