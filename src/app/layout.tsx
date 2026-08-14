@@ -13,7 +13,7 @@ const montserrat = Montserrat({
 });
 
 const description =
-  "Portfolio of Amr Abujabal, a Computer Science student at UBC Okanagan who builds computer-vision pipelines and full-stack apps: PitchVision, World Cup 2026 Predictor, Reproducing ResNet, FitCheckAI.";
+  "Portfolio of Amr Abujabal, a Computer Science student at UBC Okanagan who builds computer-vision pipelines and full-stack apps: PitchVision, FitCheckAI, Reproducing ResNet, World Cup 2026 Predictor.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
