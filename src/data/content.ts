@@ -74,6 +74,45 @@ export const projects: Project[] = [
     },
   },
   {
+    title: "FitCheckAI",
+    subtitle: "AI Fashion Assistant",
+    description:
+      "Instagram bot that turns an outfit photo into shoppable product matches. A DM webhook hands off to Celery workers that download the image behind an SSRF guard, run a vision model to break the outfit into garments, search each one across three price tiers, and reply in a stylist voice — all async FastAPI over Postgres, Redis and S3, with per-user rate limiting and 106 tests green end-to-end on Docker Compose.",
+    stack: [
+      "FastAPI",
+      "Python",
+      "Celery",
+      "PostgreSQL",
+      "Redis",
+      "AWS S3",
+      "OpenAI Vision",
+      "Docker",
+      "GitHub Actions",
+    ],
+    status: "In Progress",
+  },
+  {
+    title: "Reproducing ResNet",
+    subtitle: "Deep Learning / Paper Reproduction",
+    description:
+      "From-scratch reproduction of the CIFAR-10 experiments in Deep Residual Learning for Image Recognition (He et al., 2015): model, data pipeline, and training loop rebuilt from the paper alone under strict test-driven development. ResNet-20 reproduced at 8.39 ± 0.31% and ResNet-56 at 7.45 ± 0.69% over 3 seeds, both inside the ±0.5% target fixed before any model was trained. A follow-up 2×2 pitting the original block against pre-activation ResNet-56 across CIFAR-10 and CIFAR-100 found no measurable difference at depth 56 — the two gaps are smaller than the noise and point in opposite directions, a null result reported as the finding. 15 runs, ~26 GPU-hours.",
+    stack: [
+      "PyTorch",
+      "Deep Learning",
+      "Paper Reproduction",
+      "Computer Vision",
+      "Reproducibility",
+      "TDD",
+    ],
+    repoUrl: "https://github.com/AmroAbujabal/resnet-cifar-repro",
+    demoUrl: "https://resnet.amrabujabal.com",
+    demoLabel: "Read the Write-up",
+    image: {
+      src: "/projects/resnet-repro.png",
+      alt: "Results table and tolerance-band plot from the write-up, showing ResNet-20 at 8.39 ± 0.31% and ResNet-56 at 7.45 ± 0.69% against the paper's 8.75% and 6.97%",
+    },
+  },
+  {
     title: "World Cup 2026 Predictor",
     subtitle: "Full-Stack ML App",
     description:
@@ -95,38 +134,6 @@ export const projects: Project[] = [
       src: "/projects/world-cup-predictor.png",
       alt: "Finished World Cup 2026 bracket with a black-and-gold 'Spain are champions' hero and the AI report card scoring the model at 84%, 26 of 31 calls",
     },
-  },
-  {
-    title: "Reproducing ResNet",
-    subtitle: "Deep Learning / Paper Reproduction",
-    description:
-      "From-scratch reproduction of the CIFAR-10 experiments in Deep Residual Learning for Image Recognition (He et al., 2015): model, data pipeline, and training loop rebuilt from the paper alone under strict test-driven development. ResNet-20 reproduced at 8.39 ± 0.31% and ResNet-56 at 7.45 ± 0.69% over 3 seeds, both inside the ±0.5% target fixed before any model was trained. A follow-up 2×2 pitting the original block against pre-activation ResNet-56 across CIFAR-10 and CIFAR-100 found no measurable difference at depth 56 — the two gaps are smaller than the noise and point in opposite directions, a null result reported as the finding. 15 runs, ~26 GPU-hours.",
-    stack: [
-      "PyTorch",
-      "Deep Learning",
-      "Paper Reproduction",
-      "Computer Vision",
-      "Reproducibility",
-      "TDD",
-    ],
-    repoUrl: "https://github.com/AmroAbujabal/resnet-cifar-repro",
-    demoUrl: "https://resnet.amrabujabal.com",
-    demoLabel: "Read the Write-up",
-  },
-  {
-    title: "ByteBites",
-    subtitle: "COSC 310 Software Engineering",
-    description:
-      "RESTful food-delivery backend using a 3-layer architecture (API -> Service -> Repository) spanning 8 features: auth, menu management, ordering, delivery tracking, pricing, payment, and notifications. JWT authentication with role-based access control (User / Manager / Admin).",
-    stack: [
-      "FastAPI",
-      "Python",
-      "PostgreSQL",
-      "Docker",
-      "GitHub Actions",
-      "Pytest",
-    ],
-    repoUrl: "https://github.com/Vinu3000/COSC310-Team9-ByteBites",
   },
 ];
 
