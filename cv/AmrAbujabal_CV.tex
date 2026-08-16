@@ -1,0 +1,141 @@
+% ============================================================
+% AmrAbujabal_CV.tex — source of truth for the CV PDF.
+% Build:  cv/build.sh   (xelatex; writes public/AmrAbujabal_CV.pdf
+%                        and ~/Downloads/Resume/AmrAbujabal_CV_1.pdf)
+%
+% The PROJECTS section must mirror src/data/content.ts — same
+% projects, same order. Change one, change the other, then rebuild.
+% ============================================================
+\documentclass[10pt,letterpaper]{article}
+
+\usepackage[top=0.75in,bottom=0.75in,left=1in,right=1in]{geometry}
+\usepackage{fontspec}
+\usepackage[hidelinks]{hyperref}
+
+% ponytail: Calibri isn't registered system-wide, so load it straight out
+% of Word. Build fails loudly if Word is gone; swap the Path then.
+\setmainfont{Calibri}[
+  Path            = /Applications/Microsoft Word.app/Contents/Resources/DFonts/,
+  Extension       = .ttf,
+  UprightFont     = *,
+  BoldFont        = *b,
+  ItalicFont      = *i,
+  BoldItalicFont  = *z,
+]
+
+% Body copy is 10.5pt to match the original Word document.
+\renewcommand{\normalsize}{\fontsize{10.5}{12.6}\selectfont}
+\normalsize
+\setlength{\parindent}{0pt}
+\setlength{\emergencystretch}{2em}
+\pagestyle{empty}
+
+% Section heading: 12pt bold with a hairline rule under it.
+\newcommand{\cvsection}[1]{%
+  \vspace{7.5pt}%
+  {\fontsize{12}{14}\selectfont\bfseries #1}%
+  \par\vspace{2pt}\hrule height 0.6pt\vspace{4pt}%
+}
+
+% Project heading: bold title, italic subtitle, dates flushed right.
+\newcommand{\cvproject}[3]{%
+  \vspace{4.5pt}%
+  \textbf{#1}~\textit{|~#2}\hfill #3\par\vspace{1pt}%
+}
+
+% ponytail: hand-rolled instead of enumitem — BasicTeX doesn't ship it.
+\newenvironment{cvbullets}{%
+  \begin{list}{\textbullet}{%
+    \setlength{\leftmargin}{1.6em}%
+    \setlength{\rightmargin}{0pt}%
+    \setlength{\labelwidth}{1.1em}%
+    \setlength{\labelsep}{0.5em}%
+    \setlength{\itemindent}{0pt}%
+    \setlength{\listparindent}{0pt}%
+    \setlength{\topsep}{1pt}%
+    \setlength{\partopsep}{0pt}%
+    \setlength{\parsep}{0pt}%
+    \setlength{\itemsep}{1.5pt}%
+  }%
+}{\end{list}}
+
+\begin{document}
+
+% ── Header ───────────────────────────────────────────────────
+\begin{center}
+  {\fontsize{20}{23}\selectfont Amr Abujabal}\par\vspace{1pt}
+  Computer Science~~|~~Cloud \& Backend~~|~~Computer Vision\par\vspace{2pt}
+  (236) 338-2258~~\textbullet~~\href{mailto:Amrabujabal35@gmail.com}{Amrabujabal35@gmail.com}%
+  ~~\textbullet~~\href{https://www.linkedin.com/in/amr-abujabal-bb63b5195/}{LinkedIn}%
+  ~~\textbullet~~\href{https://github.com/AmroAbujabal}{GitHub}%
+  ~~\textbullet~~\href{https://amrabujabal.com}{Portfolio}
+\end{center}
+
+% ── Education ────────────────────────────────────────────────
+\cvsection{EDUCATION}
+
+\textbf{University of British Columbia (Okanagan)}\hfill Expected May 2027\par
+\textit{Bachelor of Science in Computer Science}
+
+% ── Technical Skills ─────────────────────────────────────────
+\cvsection{TECHNICAL SKILLS}
+
+\textbf{Languages:} Python, Java, C, C++, SQL, R, JavaScript, HTML, CSS\par\vspace{1pt}
+\textbf{Backend \& Web:} FastAPI, Next.js, React, PostgreSQL, MySQL, Redis, Celery, REST APIs, JWT auth\par\vspace{1pt}
+\textbf{Cloud \& DevOps:} Google Cloud Platform, AWS S3, Docker, Git, GitHub Actions, CI/CD, Linux/Unix\par\vspace{1pt}
+\textbf{ML \& Data:} PyTorch, NumPy, pandas, scikit-learn, XGBoost, YOLOv10, SAM 2, TransReID/\allowbreak OSNet,
+vision-language models, multi-object tracking\par\vspace{1pt}
+\textbf{Tools:} Anaconda, Jupyter, RStudio
+
+% ── Projects ─────────────────────────────────────────────────
+% Mirrors src/data/content.ts — same four projects, same order.
+\cvsection{PROJECTS}
+
+\cvproject{\href{https://github.com/AmroAbujabal/Pitch-Vision}{PitchVision}}{Computer Vision / ML · Cloud}{2026 -- Present}
+\begin{cvbullets}
+  \item Building a single-camera player identification and performance analytics system for amateur and
+        semi-pro soccer clubs, turning raw touchline footage into per-player metrics.
+  \item Engineered a tracking and re-identification pipeline (YOLOv10 detection, SAM 2 segmentation,
+        TransReID/\allowbreak OSNet re-ID) to maintain player identity across full-match clips.
+  \item Serving coach-facing outputs --- movement stats (distance, speed zones), heatmaps, pressing and
+        formation views --- over a FastAPI REST API into a Next.js dashboard, backed by PostgreSQL and
+        Docker; 126 tests passing in CI.
+\end{cvbullets}
+
+\cvproject{FitCheckAI}{AI Fashion Assistant · Full-Stack}{2026 -- Present}
+\begin{cvbullets}
+  \item Built an Instagram bot that turns an outfit photo into shoppable product matches: a DM webhook
+        hands off to Celery workers that run a vision model to break the outfit into garments, then search
+        each one across three price tiers and reply in a stylist voice.
+  \item Designed the pipeline async end to end on FastAPI over PostgreSQL, Redis and AWS S3, with an
+        SSRF-guarded image download path and per-user rate limiting.
+  \item 106 tests green end to end on Docker Compose, with a pluggable vision provider (OpenAI Vision
+        primary, Claude as fallback).
+\end{cvbullets}
+
+\cvproject{\href{https://github.com/AmroAbujabal/resnet-cifar-repro}{Reproducing ResNet --- Residual Learning on CIFAR}}{Deep Learning · Paper Reproduction}{2026}
+\begin{cvbullets}
+  \item Rebuilt the CIFAR-10 experiments from He et al. (2015) using only the paper --- model, data
+        pipeline and training loop --- test-first (TDD), with tests asserting exact layer counts and
+        parameter budgets (0.27M at ResNet-20, 0.85M at ResNet-56) before any training step.
+  \item Reproduced ResNet-20 at 8.39 ± 0.31\% and ResNet-56 at 7.45 ± 0.69\% error over 3 seeds,
+        both inside the ±0.5\% tolerance fixed before the first run.
+  \item Ran a controlled 2×2 ablation (original vs.\ pre-activation ResNet-56 × CIFAR-10 vs.\
+        CIFAR-100) and found no measurable difference at depth 56 --- the gaps are smaller than the seed
+        noise and point in opposite directions --- reported as a null result. 15 runs, \textasciitilde26 GPU-hours;
+        write-up published at \href{https://resnet.amrabujabal.com}{resnet.amrabujabal.com}.
+\end{cvbullets}
+
+\cvproject{\href{https://github.com/AmroAbujabal/world-cup-2026-predictor}{World Cup 2026 Match Outcome Predictor}}{Full-Stack ML}{2026}
+\begin{cvbullets}
+  \item Trained a 3-class match outcome classifier (Win / Draw / Loss) with XGBoost on 49,000+ historical
+        matches using ELO-based engineered features, pricing every knockout tie before kickoff.
+  \item Shipped it as a full-stack app --- FastAPI, PostgreSQL and React behind an interactive bracket with
+        user predictions and a leaderboard --- deployed on Vercel, Render and Neon, with a scheduled sync
+        that pulled real results from football-data.org and advanced the bracket as each match finished.
+  \item Ran live through the 2026 FIFA World Cup and finished 26 of 31 knockout calls correct (83.9\%),
+        Brier 0.3665, perfect through the quarter-finals and semis; finished bracket live at
+        \href{https://worldcup.amrabujabal.com}{worldcup.amrabujabal.com}.
+\end{cvbullets}
+
+\end{document}
