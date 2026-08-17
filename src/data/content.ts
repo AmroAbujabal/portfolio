@@ -129,7 +129,7 @@ export const projects: Project[] = [
       "Neon",
     ],
     repoUrl: "https://github.com/AmroAbujabal/world-cup-2026-predictor",
-    demoUrl: "https://frontend-nine-alpha-56.vercel.app",
+    demoUrl: "https://worldcup.amrabujabal.com",
     image: {
       src: "/projects/world-cup-predictor.png",
       alt: "Finished World Cup 2026 bracket with a black-and-gold 'Spain are champions' hero and the AI report card scoring the model at 84%, 26 of 31 calls",
